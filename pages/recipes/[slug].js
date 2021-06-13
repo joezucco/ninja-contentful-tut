@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
@@ -37,16 +37,18 @@ export async function getStaticProps({ params }) {
 }
 
 export default function RecipeDetails({ product }) {
-  const { featuredImage, title, cookingTime, ingredients, method } =
+  if (!recipe) return <div>loading...</div>
+
+  const { thumbnail, title, cookingTime, ingredients, method } =
     product.fields;
 
   return (
     <div>
       <div className="banner">
         <Image
-          src={"https://" + featuredImage.fields.file.url}
-          width={featuredImage.fields.file.details.image.width}
-          height={featuredImage.fields.file.details.image.height}
+          src={"https://" + thumbnail.fields.file.url}
+          width={thumbnail.fields.file.details.image.width}
+          height={thumbnail.fields.file.details.image.height}
         />
         <h2>{title}</h2>
       </div>
