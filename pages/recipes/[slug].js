@@ -47,7 +47,8 @@ export default function RecipeDetails({ product }) {
     <div>
       <div className="banner">
         <Image
-          src={"https://" + thumbnail.fields.file.url}
+          className="thumbImage"
+          src={"https:" + thumbnail.fields.file.url}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
         />
