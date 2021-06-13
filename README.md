@@ -1,4 +1,4 @@
-This is the Next.js starter site (and course files) for the Next.js & Contentful tutorial by the Net Ninja.
+This is the Next.js starter site (and course files) for the Next.js & Contentful tutorial by the Net Ninja. Working off of [this video series](https://www.youtube.com/watch?v=m9mNsYJbkNg&list=PL4cUxeGkcC9jClk8wl1yJcN3Zlrr8YSA1).
 
 ## Getting Started
 
