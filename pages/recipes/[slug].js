@@ -31,17 +31,25 @@ export async function getStaticProps({ params }) {
     "fields.slug": params.slug,
   });
 
+  if (!items.length) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
+    }
+  }
+
   return {
     props: { product: items[0] },
-    revalidate: 1
+    revalidate: 1,
   };
 }
 
 export default function RecipeDetails({ product }) {
-  if (!product) return <Skeleton />
+  if (!product) return <Skeleton />;
 
-  const { thumbnail, title, cookingTime, ingredients, method } =
-    product.fields;
+  const { thumbnail, title, cookingTime, ingredients, method } = product.fields;
 
   return (
     <div>
